@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Customers{% endblock %}
+
+{% block content %}
+<h3>Customers</h3>
+<hr>
+<div class="btn-group ">
+    <a href="{{url_for('new_customer') }}" class="btn btn-outline-primary">New Customer</a>
+</div>
+
+<div class="btn-group">
+    <a href="{{url_for('delete_customers') }}" class="btn btn-outline-danger btn-sm" style="margin-left: 25px">Delete</a>
+</div>
+
+{% if customers %}
+{% for customer in customers %}
+<hr>
+<p><strong>Name:</strong> {{customer.f_name}}</p>
+<p><strong>Last name:</strong> {{customer.l_name}}</p>
+
+{% endfor %}
+{% endif %}
+
+
+{% endblock %}

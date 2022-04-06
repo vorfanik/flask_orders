@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Add product{% endblock %}
+
+{% block content %}
+
+<form method="post" action="#">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.product.label(class="form-control-label", style="margin-bottom: 5px") }}
+        {{ form.product(class="form-control form-control-lg") }}
+    </div>
+    <br>
+    <div class="form-group">
+        {{ form.quantity.label(class="form-control-label", style="margin-bottom: 5px") }}
+        {{ form.quantity(class="form-control form-control-lg") }}
+    </div>
+    <br>
+    <div class="btn-group ">
+        {{ form.submit(class="btn btn-outline-primary", style="margin-right: 25px") }}
+    </div>
+    <div class="btn-group ">
+        <a href="{{url_for('orders') }}" class="btn btn-success">End</a>
+    </div>
+</form>
+{% endblock %}

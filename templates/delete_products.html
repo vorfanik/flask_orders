@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Products{% endblock %}
+
+{% block content %}
+<h3>Products</h3>
+<hr>
+<form method="post" action="#">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.product_del.label(class="form-control-label", style="margin-bottom: 5px") }}
+        {{ form.product_del(class="form-control") }}
+    </div>
+    <br>
+    <div class="btn-group ">
+        {{ form.submit(class="btn btn-outline-danger", style="margin-right: 25px") }}
+    </div>
+</form>
+{% endblock %}

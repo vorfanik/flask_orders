@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Status{% endblock %}
+
+{% block content %}
+
+<form method="post" action="#">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.status.label(class="form-control-label", style="margin-bottom: 5px") }}
+        {{ form.status(class="form-control") }}
+    </div>
+    <br>
+    <div class="btn-group ">
+        {{ form.submit(class="btn btn-outline-primary") }}
+    </div>
+</form>
+{% endblock %}
